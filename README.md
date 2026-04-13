@@ -1,16 +1,33 @@
-# React + Vite
+# Elpriset.se
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Visar aktuella elpriser i Sverige per timme och elområde (SE1–SE4), hämtat direkt från [elprisetjustnu.se](https://www.elprisetjustnu.se).
 
-Currently, two official plugins are available:
+## Funktioner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Spotpris i öre/kWh för aktuell timme
+- Prisgraf och timvis översikt för idag och imorgon
+- Kostnadskalkylator för vanliga hushållsapparater
+- Stöd för alla fyra svenska elområden
 
-## React Compiler
+## Kom igång
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Bygga för produktion
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+```
+
+## Tech
+
+- React + Vite
+- Chart.js via react-chartjs-2
+- Data från [elprisetjustnu.se API](https://www.elprisetjustnu.se/elpris-api)
+
+---
+
+Byggt av [Produktionen AB](https://produktionen.se)

@@ -1,0 +1,642 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+
+.header {
+  padding: 32px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+h1.brand-text, h2.section-label, h2.cost-title {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.brand-tld {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+
+/* ── Region bar ─────────────────────────────────────────── */
+
+.region-bar {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.region-btn {
+  flex: 1;
+  padding: 8px 6px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.region-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.region-btn.active {
+  background: rgba(238, 185, 43, 0.14);
+  color: var(--gold);
+}
+
+.region-code {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.region-city {
+  display: block;
+  font-size: 0.6rem;
+  opacity: 0.65;
+  margin-top: 1px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+/* ── Hero card ──────────────────────────────────────────── */
+
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 32px 28px 28px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  animation: fade-up 0.35s ease both;
+}
+
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.hero-price-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.hero-price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(3.5rem, 16vw, 6.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.hero-unit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.hero-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.hero-badge.low {
+  background: rgba(114, 204, 140, 0.12);
+  color: var(--price-low);
+}
+
+.hero-badge.medium {
+  background: rgba(238, 185, 43, 0.12);
+  color: var(--gold);
+}
+
+.hero-badge.high {
+  background: rgba(224, 114, 80, 0.12);
+  color: var(--price-high);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Day toggle ─────────────────────────────────────────── */
+
+.day-toggle {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.day-btn {
+  flex: 1;
+  padding: 9px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.day-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.day-btn.active {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.day-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.day-btn:disabled:hover {
+  background: none;
+  color: var(--text-secondary);
+}
+
+/* ── Chart card ─────────────────────────────────────────── */
+
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px 18px;
+  margin-bottom: 14px;
+  animation: fade-up 0.35s 0.06s ease both;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.section-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.62rem;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Cost calculator ────────────────────────────────────── */
+
+.cost-section {
+  margin-bottom: 36px;
+}
+
+.cost-title, .faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.cost-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cost-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  transition: background 0.1s;
+}
+
+.cost-row:last-child {
+  border-bottom: none;
+}
+
+.cost-row:hover {
+  background: var(--bg-elevated);
+}
+
+.cost-left {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  flex: 1;
+}
+
+.cost-emoji {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 26px;
+  text-align: center;
+}
+
+.cost-info {
+  min-width: 0;
+}
+
+.cost-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.cost-range {
+  display: flex;
+  gap: 10px;
+}
+
+.cost-cheap {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.63rem;
+  color: var(--price-low);
+  opacity: 0.8;
+}
+
+.cost-pricey {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.63rem;
+  color: var(--price-high);
+  opacity: 0.8;
+}
+
+.cost-price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cost-expand-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  transition: background 0.12s, color 0.12s;
+}
+
+.cost-expand-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* ── Loading / states ───────────────────────────────────── */
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 52px 20px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.no-data-state {
+  padding: 44px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.no-data-state strong {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* ── FAQ ────────────────────────────────────────────────── */
+
+.faq-section {
+  margin-bottom: 36px;
+}
+
+.faq-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 18px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: background 0.12s;
+}
+
+.faq-question:hover {
+  background: var(--bg-elevated);
+}
+
+.faq-item.open .faq-question {
+  color: var(--gold);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.12s;
+}
+
+.faq-item.open .faq-chevron {
+  color: var(--gold);
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 18px 15px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── About card ─────────────────────────────────────────── */
+
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  margin-bottom: 14px;
+}
+
+.about-company {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  display: inline-block;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 1px;
+  letter-spacing: -0.01em;
+}
+
+.about-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.about-contact {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.about-link {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.about-link:hover {
+  color: var(--gold);
+}
+
+.about-tools {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.about-tools-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  letter-spacing: 0;
+}
+
+.about-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.12s;
+}
+
+.about-tool-link:hover {
+  color: var(--gold);
+}
+
+.about-tool-link svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+
+.footer {
+  margin-top: auto;
+  padding: 0 20px 32px;
+  max-width: 640px;
+  width: 100%;
+  align-self: center;
+}
+
+.footer-inner {
+  text-align: center;
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  line-height: 1.9;
+  padding-top: 4px;
+}
+
+.footer-inner a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.about-company {
+  text-decoration: none;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 420px) {
+  .header { padding: 24px 0 22px; }
+  .hero-card { padding: 24px 20px 22px; }
+  .brand-name { font-size: 1.35rem; }
+  .region-city { display: none; }
+  .hour-row { padding: 9px 14px; }
+  .hours-card { border-radius: 12px; }
+  .chart-card { border-radius: 12px; }
+}
